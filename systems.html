@@ -52,7 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API reference" href="api.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,8 +100,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     GES-comp-echem User Guide
                 </a>
             </li>
@@ -203,7 +202,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/GES-lbabetto/GES-comp-echem/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/GES-lbabetto/GES-comp-echem/issues/new?title=Issue%20on%20page%20%2Fsystems.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -231,7 +230,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.md"
+        <a href="_sources/systems.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -268,12 +267,53 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objects-submodule">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     objects
+    </span>
+   </code>
+   submodule
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#system-objects">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       System
+      </span>
+     </code>
+     objects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -285,6 +325,36 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objects-submodule">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     objects
+    </span>
+   </code>
+   submodule
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#system-objects">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       System
+      </span>
+     </code>
+     objects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -294,23 +364,64 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ges-comp-echem-user-guide">
 <h1>GES-comp-echem User Guide<a class="headerlink" href="#ges-comp-echem-user-guide" title="Permalink to this headline">#</a></h1>
-<p>This is the user guide for the <strong>GES-comp-echem</strong> Python module. The philosophy of this software package is to provide a simple interface for carrying out calculations with a number of computational chemistry programs and a number of higher level algorithms to obtain a series of experimental observables.</p>
-<p>The package is constructed based on the following submodules:</p>
+<section id="objects-submodule">
+<h2><code class="docutils literal notranslate"><span class="pre">objects</span></code> submodule<a class="headerlink" href="#objects-submodule" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">objects</span></code> submodule contains the following classes, used to collect and store information about the system of interest:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">objects</span></code>: classes for storing informations about the system under study, such as geometry, number of atoms, calculated energies, charge, spin, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tools</span></code>: various useful functions called internally throughout the code. The user should generally not need to use this module during normal operation.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">wrappers</span></code>: wrappers for interfacing with external software, such as <strong>Orca</strong>, <strong>DFTB+</strong>, <strong>CREST</strong>, etc.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">functions</span></code>: mid-level algorithms for manually calculating specific physical observables, such as pKa or redox potentials. The user must provide all the necessary species for the calculation, for example the specific protonated and deprotonated species in a pKa calculation.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">algorithms</span></code>: high-level algorithms for automatically calculating specific physical observables, considering all the “non-trivial” complications of the case. For example, taking into account protonation states and PCET mechanisms in the calculation of the redox potential. The user only needs to provide a “generic” state of the system of interest, and the algorithm should find the exact species involved in the calculation (e.g., the correct tautomer/conformer at the correct protonation state at a given pH)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">System</span></code>: generic system object, such as a single molecule.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ensemble</span></code>: ensemble object, intended as a collection of closely related <code class="docutils literal notranslate"><span class="pre">System</span></code> objects. For example, the ensemble of conformers generated by the corresponding <strong>CREST</strong> routine.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MDTrajectory</span></code>: iterator object containing data about molecular dynamics trajectories.</p></li>
 </ul>
-<p>The <strong>GES-comp-echem</strong> package can be imported in a Python script via the following syntax:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">compechem</span>
+<p>The <code class="docutils literal notranslate"><span class="pre">objects</span></code> module can either be imported as a whole:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">objects</span>
 </pre></div>
 </div>
-<p>For a more detailed explanation of the available features in each submodule, please refer to their specific page in this manual.</p>
-<p>For some examples on how to use this library, please check out the <code class="docutils literal notranslate"><span class="pre">tutorials</span></code> section!</p>
-<div class="toctree-wrapper compound">
+<p>Alternatively, the individual classes can be imported separately:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.objects</span> <span class="kn">import</span> <span class="n">System</span>
+<span class="kn">from</span> <span class="nn">compechem.objects</span> <span class="kn">import</span> <span class="n">Ensemble</span>
+<span class="kn">from</span> <span class="nn">compechem.objects</span> <span class="kn">import</span> <span class="n">MDTrajectory</span>
+</pre></div>
 </div>
+<hr class="docutils" />
+<section id="system-objects">
+<h3><code class="docutils literal notranslate"><span class="pre">System</span></code> objects<a class="headerlink" href="#system-objects" title="Permalink to this headline">#</a></h3>
+<p>A system object is initialized by providing a molecular geometry via a .xyz file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.objects</span> <span class="kn">import</span> <span class="n">System</span>
+<span class="n">my_mol</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;path/to/xyz/my_mol.xyz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Optionally, the following parameters can be provided (if not provided, some default values are set):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">charge</span></code>: total charge of the system. Default: 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spin</span></code>: total spin multiplicity of the system (2S+1, where S is the total spin angular momentum). Default: 1 (singlet)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">periodic</span></code>: if <code class="docutils literal notranslate"><span class="pre">True</span></code>, system is periodic. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">box_side</span></code>: (for periodic systems only), length of the simulation box (in Å)</p></li>
+</ul>
+<p>Example of a periodic system of side 18.27 Å containing a cation radical:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.objects</span> <span class="kn">import</span> <span class="n">System</span>
+<span class="n">my_mol</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span>
+    <span class="s2">&quot;path/to/xyz/my_mol.xyz&quot;</span><span class="p">,</span> 
+    <span class="n">charge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">spin</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">periodic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+    <span class="n">box_side</span><span class="o">=</span><span class="mf">18.27</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Below is a list of all the available properties. These, as well as the initialization parameters above, can be accessed via the following syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_prop</span> <span class="o">=</span> <span class="n">my_mol</span><span class="o">.</span><span class="n">property</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: system name (by default, given by the input .xyz file name)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atomcount</span></code>: total number of atoms</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geometry</span></code>: list containing atom types and coordinates</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flags</span></code>: list of all the warning/error flags raised for this specific system during the various calculations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">energies</span></code>: dictionary containing the calculated electronic/vibronic energies, indexed by level of theory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">properties</span></code>: dictionary containing the calculated properties, such as pKa</p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -340,13 +451,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="api.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">API reference</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
