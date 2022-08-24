@@ -653,17 +653,11 @@ title="Print to PDF"
 <span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">MDTrajectory</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">System</span></code>, <code class="docutils literal notranslate"><span class="pre">Ensemble</span></code>, and <code class="docutils literal notranslate"><span class="pre">MDTrajectory</span></code> classes can also be imported directly from the <code class="docutils literal notranslate"><span class="pre">compechem</span></code> main module, thanks to a symbolic link pointing to the correct location:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">System</span>
-<span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">Ensemble</span>
-<span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">MDTrajectory</span>
-</pre></div>
-</div>
 <hr class="docutils" />
 <section id="system-objects">
 <h2><code class="docutils literal notranslate"><span class="pre">System</span></code> objects<a class="headerlink" href="#system-objects" title="Permalink to this headline">#</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">System</span></code> object is initialized by providing a molecular geometry via a .xyz file:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">System</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">System</span>
 <span class="n">my_mol</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;path/to/xyz/my_mol.xyz&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -674,7 +668,7 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">box_side</span></code>: (for periodic systems only), length of the simulation box (in Å)</p></li>
 </ul>
 <p>Example of a periodic system of side 18.27 Å containing a cation radical:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">System</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">System</span>
 <span class="n">my_mol</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span>
     <span class="s2">&quot;path/to/xyz/my_mol.xyz&quot;</span><span class="p">,</span> 
     <span class="n">charge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
@@ -733,8 +727,8 @@ title="Print to PDF"
 <section id="ensemble-objects">
 <h2><code class="docutils literal notranslate"><span class="pre">Ensemble</span></code> objects<a class="headerlink" href="#ensemble-objects" title="Permalink to this headline">#</a></h2>
 <p>An <code class="docutils literal notranslate"><span class="pre">Ensemble</span></code> object is not usually initialized by the user, but is instead provided by some other modules, such as some <strong>CREST</strong> routines. For more details, refer to the <code class="docutils literal notranslate"><span class="pre">CREST</span> <span class="pre">&lt;link&gt;</span></code> page. However, it is still possible to manually generate an <code class="docutils literal notranslate"><span class="pre">Ensemble</span></code> object by providing an <code class="docutils literal notranslate"><span class="pre">iterable</span></code> (such as a list) yielding <code class="docutils literal notranslate"><span class="pre">System</span></code> objects:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">System</span>
-<span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">Ensemble</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">System</span>
+<span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">Ensemble</span>
 
 <span class="n">my_mol1</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;path/to/xyz/my_mol1.xyz&quot;</span><span class="p">)</span>
 <span class="n">my_mol2</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;path/to/xyz/my_mol2.xyz&quot;</span><span class="p">)</span>
@@ -763,7 +757,7 @@ title="Print to PDF"
 <section id="mdtrajectory-objects">
 <h2><code class="docutils literal notranslate"><span class="pre">MDTrajectory</span></code> objects<a class="headerlink" href="#mdtrajectory-objects" title="Permalink to this headline">#</a></h2>
 <p>An <code class="docutils literal notranslate"><span class="pre">MDTrajectory</span></code> object is not usually initialized by the user, but is instead provided by the <strong>DFTB+</strong> module. For more details, refer to the <a class="reference internal" href="wrappers/dftbplus.html#guide-wrappers-dftbplus"><span class="std std-ref">DFTB+</span></a> page. However, it is still possible to manually generate an <code class="docutils literal notranslate"><span class="pre">MDTrajectory</span></code> object by providing the path <code class="docutils literal notranslate"><span class="pre">prefix</span></code> to the <code class="docutils literal notranslate"><span class="pre">&lt;prefix&gt;_md.out</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;prefix&gt;_geo_end.xyz</span></code> files, and the level of theory at which the DFTB+ simulation was ran:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">MDTrajectory</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">MDTrajectory</span>
 
 <span class="c1"># note, the following files must exist:</span>
 <span class="c1"># path/to/xyz/my_traj_md.out</span>
