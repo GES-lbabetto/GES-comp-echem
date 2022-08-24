@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Getting Started &#8212; GES-compechem Documentation</title>
+    <title>Getting Started &#8212; GES-compechem User Guide</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -92,7 +92,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">GES-compechem Documentation</h1>
+      <h1 class="site-logo" id="site-title">GES-compechem User Guide</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -631,7 +631,7 @@ title="Print to PDF"
 <hr class="docutils" />
 <section id="my-first-calculation">
 <h2>My first calculation<a class="headerlink" href="#my-first-calculation" title="Permalink to this headline">#</a></h2>
-<p>Let us go through the very basics of using the library. At the very least, you will need the geometrical structure of the system you want to study, in the form of a .xyz file. You can obtain it from available databases, or you can draw the structures yourself in programs such as <a class="reference external" href="https://avogadro.cc/">Avogadro</a></p>
+<p>Let us go through the very basics of using the library. At the very least, you will need the geometrical structure of the system you want to study, in the form of a .xyz file. You can obtain it from available databases, or you can draw the structures yourself in programs such as <a class="reference external" href="https://avogadro.cc/">Avogadro</a>.</p>
 <p>Below is the <code class="docutils literal notranslate"><span class="pre">water.xyz</span></code> file, containing the structure of the water molecule, which we will use in these examples:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>
 
@@ -640,7 +640,7 @@ title="Print to PDF"
 <span class="n">H</span>  <span class="o">-</span><span class="mf">1.442</span>   <span class="mf">0.368</span>   <span class="mf">0.000</span>  
 </pre></div>
 </div>
-<p>If you open the file in a molecular visualization software, you will notice the structure is not really right. We can then optimise the structure with a software of choice. We will use <a class="reference external" href="https://github.com/grimme-lab/xtb">xTB</a> in this example, thanks to its balance between accuracy and speed. The library needs the program to already be installed (preferably via conda) and ready to go.</p>
+<p>If you open the file in a molecular visualization software, you will notice the structure is not quite right. We can then optimise the structure with a software of choice. We will use <a class="reference external" href="https://github.com/grimme-lab/xtb">xTB</a> in this example, due to its balance between accuracy and speed. The library needs the program to already be installed (preferably via conda) and ready to go.</p>
 <section id="importing-the-library">
 <h3>Importing the library<a class="headerlink" href="#importing-the-library" title="Permalink to this headline">#</a></h3>
 <p>Before starting, we need to create a Python script and import the necessary modules from the library. We need the <code class="docutils literal notranslate"><span class="pre">System</span></code> submodule to store the information about our water molecule, and the <code class="docutils literal notranslate"><span class="pre">XtbInput</span></code> submodule to carry out the actual calculation:</p>
