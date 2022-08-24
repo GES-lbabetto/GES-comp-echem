@@ -273,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
      sub-module
     </a>
    </li>
-   <li class="toctree-l2">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="API/algorithms.html">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -282,6 +282,23 @@ const thebe_selector_output = ".output, .cell_output"
      </code>
      sub-module
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="API/algorithms/oneeloxidation.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         compechem.algorithms.oneeloxidation
+        </span>
+       </code>
+       sub-module
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="API/tools.html">
@@ -446,11 +463,11 @@ title="Print to PDF"
 <h1>User guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">GES-comp-echem</span></code> library is constructed based on the following submodules:</p>
 <ul class="simple">
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">compechem.systems</span></code></span>: classes for storing informations about the system under study, such as geometry, number of atoms, calculated energies, charge, spin, etc.</p></li>
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">compechem.wrappers</span></code></span>: wrappers for interfacing with external software, such as <strong>Orca</strong>, <strong>DFTB+</strong>, <strong>CREST</strong>, etc.</p></li>
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">compechem.functions</span></code></span>: mid-level algorithms for manually calculating specific physical observables, such as pKa or redox potentials. The user must provide all the necessary species for the calculation, for example the specific protonated and deprotonated species in a pKa calculation.</p></li>
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">compechem.algorithms</span></code></span>: high-level algorithms for automatically calculating specific physical observables, considering all the “non-trivial” complications of the case. For example, taking into account protonation states and PCET mechanisms in the calculation of the redox potential. The user only needs to provide a “generic” state of the system of interest, and the algorithm should find the exact species involved in the calculation (e.g., the correct tautomer/conformer at the correct protonation state at a given pH)</p></li>
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">compechem.tools</span></code></span>: various useful functions called internally throughout the code. The user should generally not need to use this module during normal operation.</p></li>
+<li><p><a class="reference internal" href="Guide/systems.html#guide-systems"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">compechem.systems</span></code></span></a>: classes for storing informations about the system under study, such as geometry, number of atoms, calculated energies, charge, spin, etc.</p></li>
+<li><p><a class="reference internal" href="Guide/wrappers.html#guide-wrappers"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">compechem.wrappers</span></code></span></a>: wrappers for interfacing with external software, such as <strong>Orca</strong>, <strong>DFTB+</strong>, <strong>CREST</strong>, etc.</p></li>
+<li><p><a class="reference internal" href="Guide/functions.html#guide-functions"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">compechem.functions</span></code></span></a>: mid-level algorithms for manually calculating specific physical observables, such as pKa or redox potentials. The user must provide all the necessary species for the calculation, for example the specific protonated and deprotonated species in a pKa calculation.</p></li>
+<li><p><a class="reference internal" href="Guide/algorithms.html#guide-algorithms"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">compechem.algorithms</span></code></span></a>: high-level algorithms for automatically calculating specific physical observables, considering all the “non-trivial” complications of the case. For example, taking into account protonation states and PCET mechanisms in the calculation of the redox potential. The user only needs to provide a “generic” state of the system of interest, and the algorithm should find the exact species involved in the calculation (e.g., the correct tautomer/conformer at the correct protonation state at a given pH)</p></li>
+<li><p><a class="reference internal" href="Guide/tools.html#guide-tools"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">compechem.tools</span></code></span></a>: various useful functions called internally throughout the code. The user should generally not need to use this module during normal operation.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>

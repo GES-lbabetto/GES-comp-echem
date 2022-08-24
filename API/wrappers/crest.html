@@ -273,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
      sub-module
     </a>
    </li>
-   <li class="toctree-l2">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../algorithms.html">
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -282,6 +282,23 @@ const thebe_selector_output = ".output, .cell_output"
      </code>
      sub-module
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../algorithms/oneeloxidation.html">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         compechem.algorithms.oneeloxidation
+        </span>
+       </code>
+       sub-module
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../tools.html">
@@ -751,16 +768,11 @@ molecules until convergence is reached, or 150 molecules are added.</p></li>
 Alternative options: gfn1, gfnff</p></li>
 <li><p><strong>enslvl</strong> (<em>str</em>) – method for the ensemble optimization, by default gfn2
 Alternative options: gfn1, gfnff</p></li>
-<li><p><strong>ensemble_choice</strong> (<em>str</em>) – <p>file containing the chosen ensemble after generation, by default “full_ensemble”. Available
-options are:</p>
-<blockquote>
-<div><ul>
-<li><p>”full_ensemble”</p></li>
-<li><p>”final_ensemble”</p></li>
-<li><p>”crest_best”</p></li>
-</ul>
-</div></blockquote>
-</p></li>
+<li><p><strong>ensemble_choice</strong> (<em>str</em>) – file containing the chosen ensemble after generation, by default “full_ensemble”. Available
+options are:
+- “full_ensemble”
+- “final_ensemble”
+- “crest_best”</p></li>
 <li><p><strong>nsolv</strong> (<em>int</em>) – number of solvent molecules to add to the cluster, by default 0 (unconstrained).
 If a number is not specified, the program will keep adding solvent
 molecules until convergence is reached, or 150 molecules are added.</p></li>
