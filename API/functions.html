@@ -582,14 +582,86 @@ title="Print to PDF"
 <span id="api-functions"></span><h1><code class="docutils literal notranslate"><span class="pre">compechem.functions</span></code> sub-module<a class="headerlink" href="#compechem-functions-sub-module" title="Permalink to this headline">#</a></h1>
 <section id="calculate-pka-function">
 <h2><code class="docutils literal notranslate"><span class="pre">calculate_pka</span></code> function<a class="headerlink" href="#calculate-pka-function" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="compechem.functions.calculate_pka">
+<span class="sig-prename descclassname"><span class="pre">compechem.functions.</span></span><span class="sig-name descname"><span class="pre">calculate_pka</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protonated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="systems.html#compechem.systems.System" title="compechem.systems.System"><span class="pre">compechem.systems.System</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">deprotonated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="systems.html#compechem.systems.System" title="compechem.systems.System"><span class="pre">compechem.systems.System</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_el</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_vib</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.functions.calculate_pka" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculates the pKa of a molecule, given the protonated and deprotonated forms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>protonated</strong> (<em>System object</em>) – molecule in the protonated form</p></li>
+<li><p><strong>deprotonated</strong> (<em>System object</em>) – molecule in the deprotonated form</p></li>
+<li><p><strong>method_el</strong> (<em>str</em>) – level of theory for the electronic energy</p></li>
+<li><p><strong>method_vib</strong> (<em>str</em><em>, </em><em>optional</em>) – level of theory for the vibronic contributions, if method_vib is None (default),
+the pKa calculation will be carried out only considering the electronic component</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>pKa</strong> – pKa of the molecule.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <hr class="docutils" />
 <section id="calculate-potential-function">
 <h2><code class="docutils literal notranslate"><span class="pre">calculate_potential</span></code> function<a class="headerlink" href="#calculate-potential-function" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="compechem.functions.calculate_potential">
+<span class="sig-prename descclassname"><span class="pre">compechem.functions.</span></span><span class="sig-name descname"><span class="pre">calculate_potential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oxidised</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="systems.html#compechem.systems.System" title="compechem.systems.System"><span class="pre">compechem.systems.System</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduced</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="systems.html#compechem.systems.System" title="compechem.systems.System"><span class="pre">compechem.systems.System</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_el</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_vib</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pH</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">7.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.functions.calculate_potential" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculates the reduction potential of a molecule, given the oxidised and reduced forms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>oxidised</strong> (<em>System object</em>) – molecule in the oxidised state</p></li>
+<li><p><strong>reduced</strong> (<em>System object</em>) – molecule in the reduced state</p></li>
+<li><p><strong>method_el</strong> (<em>str</em>) – level of theory for the electronic energy</p></li>
+<li><p><strong>method_vib</strong> (<em>str</em><em>, </em><em>optional</em>) – level of theory for the vibronic contributions, if method_vib is None (default),
+the potential calculation will be carried out only considering the electronic component</p></li>
+<li><p><strong>pH</strong> (<em>float</em>) – pH at which the redox potential is evaluated, by default pH=7</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>potential</strong> – reduction potential of the molecule.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <hr class="docutils" />
 <section id="reorder-energies-function">
 <h2><code class="docutils literal notranslate"><span class="pre">reorder_energies</span></code> function<a class="headerlink" href="#reorder-energies-function" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="compechem.functions.reorder_energies">
+<span class="sig-prename descclassname"><span class="pre">compechem.functions.</span></span><span class="sig-name descname"><span class="pre">reorder_energies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxcore</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">350</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_opt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_el</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_vib</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.functions.reorder_energies" title="Permalink to this definition">#</a></dt>
+<dd><p>Reorders a molecule list (generated by a CREST routine such as deprotonation) at a different
+level of theory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>molecule_list</strong> (<em>list</em>) – list containing the molecule objects to be reordered (e.g., generated by a CREST routine)</p></li>
+<li><p><strong>ncores</strong> (<em>int</em><em>, </em><em>optional</em>) – number of cores, by default all available cores</p></li>
+<li><p><strong>maxcore</strong> (<em>int</em><em>, </em><em>optional</em>) – memory per core, in MB, by default 350</p></li>
+<li><p><strong>method_opt</strong> (<em>XtbInput/OrcaInput</em><em>, </em><em>optional</em>) – level of theory for the geometry optimization. By default converted to gfn2</p></li>
+<li><p><strong>method_el</strong> (<em>XtbInput/OrcaInput</em><em>, </em><em>optional</em>) – level of theory for the electronic part of the energy. By default converted to r2SCAN-3c</p></li>
+<li><p><strong>method_vib</strong> (<em>XtbInput/OrcaInput</em><em>, </em><em>optional</em>) – level of theory for the vibronic contribution to the energy. By default converted to gfn2</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>molecule_list</strong> – molecule list, reordered at the new level of theory.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 </section>
 

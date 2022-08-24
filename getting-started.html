@@ -651,31 +651,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">System</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">XtbInput</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.13</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compechem</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">compechem.wrappers.orca</span> <span class="kn">import</span> <span class="n">OrcaInput</span><span class="p">,</span> <span class="n">M06</span><span class="p">,</span> <span class="n">CCSD</span><span class="p">,</span> <span class="n">r2SCAN</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">compechem.wrappers.xtb</span> <span class="kn">import</span> <span class="n">XtbInput</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">compechem.wrappers</span> <span class="kn">import</span> <span class="n">crest</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">compechem.wrappers</span> <span class="kn">import</span> <span class="n">packmol</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">Ensemble</span><span class="p">,</span> <span class="n">MDTrajectory</span>
-
-<span class="n">File</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.8.13</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.8</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">compechem</span><span class="o">/</span><span class="n">wrappers</span><span class="o">/</span><span class="n">crest</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">mkdtemp</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">compechem.config</span> <span class="kn">import</span> <span class="n">get_ncores</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">System</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">compechem.tools</span> <span class="kn">import</span> <span class="n">split_multixyz</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">compechem.tools</span> <span class="kn">import</span> <span class="n">cyclization_check</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;System&#39; from partially initialized module &#39;compechem&#39; (most likely due to a circular import) (/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/compechem/__init__.py)
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="creating-the-system-object">
@@ -710,8 +685,38 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RDKit WARNING: [16:03:26] Warning: molecule is tagged as 3D, but all Z coords are zero
-[16:03:26] Warning: molecule is tagged as 3D, but all Z coords are zero
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">xtb</span><span class="o">.</span><span class="n">opt</span><span class="p">(</span><span class="n">water</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/compechem/wrappers/xtb.py:215,</span> in <span class="ni">XtbInput.opt</span><span class="nt">(self, mol, ncores, maxcore, charge, spin, inplace, remove_tdir)</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>         <span class="sa">f</span><span class="s2">&quot;xtb </span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.xyz --</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="si">}</span><span class="s2"> --chrg </span><span class="si">{</span><span class="n">charge</span><span class="si">}</span><span class="s2"> --uhf </span><span class="si">{</span><span class="n">spin</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2"> --ohess -P </span><span class="si">{</span><span class="n">ncores</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">optionals</span><span class="si">}</span><span class="s2"> &gt; output.out 2&gt;&gt; output.err&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">215</span> <span class="k">if</span> <span class="n">dissociation_check</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span>     <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dissociation spotted for </span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="n">add_flag</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>         <span class="n">mol</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>         <span class="sa">f</span><span class="s2">&quot;Dissociation occurred during geometry optimization with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/compechem/tools/internaltools.py:101,</span> in <span class="ni">dissociation_check</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="k">def</span> <span class="nf">dissociation_check</span><span class="p">():</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span>     <span class="sd">&quot;&quot;&quot;Checks if a dissociation has occurred (e.g., during a</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span><span class="sd">     geometry optimization)</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span><span class="sd">     False, if a dissociation is not detected</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">101</span>     <span class="n">mol_file</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.mol&quot;</span><span class="p">)][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="n">end_mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromMolFile</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="n">mol_file</span><span class="p">,</span> <span class="n">sanitize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strictParsing</span><span class="o">=</span><span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="n">end_smiles</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">end_mol</span><span class="p">)</span>
+
+<span class="ne">IndexError</span>: list index out of range
 </pre></div>
 </div>
 </div>
