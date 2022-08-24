@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>systems submodule &#8212; GES-compechem Documentation</title>
+    <title>compechem.systems sub-module &#8212; GES-compechem Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="API Documentation" href="../api.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,7 +107,60 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../user-guide.html">
+   User guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../Guide/systems.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       systems
+      </span>
+     </code>
+     submodule
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../api.html">
+   API Documentation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       compechem.systems
+      </span>
+     </code>
+     sub-module
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
     </div>
 </nav></div>
         <div class="bd-sidebar__bottom">
@@ -251,33 +305,53 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#system-objects">
+  <a class="reference internal nav-link" href="#energies-class">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Energies
+    </span>
+   </code>
+   class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-class">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Properties
+    </span>
+   </code>
+   class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#system-class">
    <code class="docutils literal notranslate">
     <span class="pre">
      System
     </span>
    </code>
-   objects
+   class
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ensemble-objects">
+  <a class="reference internal nav-link" href="#ensemble-class">
    <code class="docutils literal notranslate">
     <span class="pre">
      Ensemble
     </span>
    </code>
-   objects
+   class
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mdtrajectory-objects">
+  <a class="reference internal nav-link" href="#mdtrajectory-class">
    <code class="docutils literal notranslate">
     <span class="pre">
      MDTrajectory
     </span>
    </code>
-   objects
+   class
   </a>
  </li>
 </ul>
@@ -289,7 +363,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>systems submodule</h1>
+                <h1>compechem.systems sub-module</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -300,33 +374,53 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#system-objects">
+  <a class="reference internal nav-link" href="#energies-class">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Energies
+    </span>
+   </code>
+   class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-class">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Properties
+    </span>
+   </code>
+   class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#system-class">
    <code class="docutils literal notranslate">
     <span class="pre">
      System
     </span>
    </code>
-   objects
+   class
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ensemble-objects">
+  <a class="reference internal nav-link" href="#ensemble-class">
    <code class="docutils literal notranslate">
     <span class="pre">
      Ensemble
     </span>
    </code>
-   objects
+   class
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mdtrajectory-objects">
+  <a class="reference internal nav-link" href="#mdtrajectory-class">
    <code class="docutils literal notranslate">
     <span class="pre">
      MDTrajectory
     </span>
    </code>
-   objects
+   class
   </a>
  </li>
 </ul>
@@ -339,127 +433,27 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="systems-submodule">
-<h1><code class="docutils literal notranslate"><span class="pre">systems</span></code> submodule<a class="headerlink" href="#systems-submodule" title="Permalink to this headline">#</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">systems</span></code> submodule contains the following classes, used to collect and store information about the system of interest:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">System</span></code>: generic system object, such as a single molecule.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Ensemble</span></code>: ensemble object, intended as a collection of closely related <code class="docutils literal notranslate"><span class="pre">System</span></code> objects. For example, the ensemble of conformers generated by the corresponding <strong>CREST</strong> routine.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">MDTrajectory</span></code>: iterator object containing data about molecular dynamics trajectories.</p></li>
-</ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">systems</span></code> module can either be imported as a whole:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">systems</span>
-</pre></div>
-</div>
-<p>Alternatively, the individual classes can be imported separately:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">System</span>
-<span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">Ensemble</span>
-<span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">MDTrajectory</span>
-</pre></div>
-</div>
-<hr class="docutils" />
-<section id="system-objects">
-<h2><code class="docutils literal notranslate"><span class="pre">System</span></code> objects<a class="headerlink" href="#system-objects" title="Permalink to this headline">#</a></h2>
-<p>A <code class="docutils literal notranslate"><span class="pre">System</span></code> object is initialized by providing a molecular geometry via a .xyz file:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">System</span>
-<span class="n">my_mol</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;path/to/xyz/my_mol.xyz&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Optionally, the following parameters can be provided (if not provided, some default values are set):</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">charge</span></code>: total charge of the system. Default: 0</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">spin</span></code>: total spin multiplicity of the system (2S+1, where S is the total spin angular momentum). Default: 1 (singlet)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">periodic</span></code>: if <code class="docutils literal notranslate"><span class="pre">True</span></code>, system is periodic. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">box_side</span></code>: (for periodic systems only), length of the simulation box (in Å)</p></li>
-</ul>
-<p>Example of a periodic system of side 18.27 Å containing a cation radical:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">System</span>
-<span class="n">my_mol</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span>
-    <span class="s2">&quot;path/to/xyz/my_mol.xyz&quot;</span><span class="p">,</span> 
-    <span class="n">charge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-    <span class="n">spin</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-    <span class="n">periodic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
-    <span class="n">box_side</span><span class="o">=</span><span class="mf">18.27</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<p>Below is a list of all the available properties. These, as well as the initialization parameters above, can be accessed via the following syntax:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_prop</span> <span class="o">=</span> <span class="n">my_mol</span><span class="o">.</span><span class="n">property</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: system name (by default, given by the input .xyz file name)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">atomcount</span></code>: total number of atoms</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">geometry</span></code>: list containing atom types and coordinates</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flags</span></code>: list of all the warning/error flags raised for this specific system during the various calculations</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">energies</span></code>: dictionary containing the calculated electronic/vibronic energies, indexed by level of theory</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">properties</span></code>: dictionary containing the calculated properties, such as pKa</p></li>
-</ul>
-<p>Some internal functions are also available:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">write_xyz(path)</span></code>: writes a .xyz file with the current system geometry at the indicated <code class="docutils literal notranslate"><span class="pre">path</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">write_gen(path,</span> <span class="pre">box_side)</span></code>: writes a .gen file (for DFTB+) at the indicated <code class="docutils literal notranslate"><span class="pre">path</span></code>. Optionally, the box_side can be set explicitly, otherwise the internal <code class="docutils literal notranslate"><span class="pre">box_side</span></code> parameter will be used</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">update_geomety(path)</span></code>: overwrites the current geometry with the one provided by the .xyz file in the provided <code class="docutils literal notranslate"><span class="pre">path</span></code></p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="compechem-systems-sub-module">
+<span id="api-systems"></span><h1><code class="docutils literal notranslate"><span class="pre">compechem.systems</span></code> sub-module<a class="headerlink" href="#compechem-systems-sub-module" title="Permalink to this headline">#</a></h1>
+<section id="energies-class">
+<h2><code class="docutils literal notranslate"><span class="pre">Energies</span></code> class<a class="headerlink" href="#energies-class" title="Permalink to this headline">#</a></h2>
 </section>
 <hr class="docutils" />
-<section id="ensemble-objects">
-<h2><code class="docutils literal notranslate"><span class="pre">Ensemble</span></code> objects<a class="headerlink" href="#ensemble-objects" title="Permalink to this headline">#</a></h2>
-<p>An <code class="docutils literal notranslate"><span class="pre">Ensemble</span></code> object is not usually initialized by the user, but is instead provided by some other modules, such as some <strong>CREST</strong> routines. For more details, refer to the <code class="docutils literal notranslate"><span class="pre">CREST</span> <span class="pre">&lt;link&gt;</span></code> page. However, it is still possible to manually generate an <code class="docutils literal notranslate"><span class="pre">Ensemble</span></code> object by providing an <code class="docutils literal notranslate"><span class="pre">iterable</span></code> (such as a list) yielding <code class="docutils literal notranslate"><span class="pre">System</span></code> objects:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">System</span>
-<span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">Ensemble</span>
-
-<span class="n">my_mol1</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;path/to/xyz/my_mol1.xyz&quot;</span><span class="p">)</span>
-<span class="n">my_mol2</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;path/to/xyz/my_mol2.xyz&quot;</span><span class="p">)</span>
-<span class="n">my_mol3</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;path/to/xyz/my_mol3.xyz&quot;</span><span class="p">)</span>
-
-<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">my_mol1</span><span class="p">,</span> <span class="n">my_mol2</span><span class="p">,</span> <span class="n">my_mol3</span><span class="p">]</span>
-
-<span class="n">my_ens</span> <span class="o">=</span> <span class="n">Ensemble</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Below is a list of all the available properties. These can be accessed via the following syntax:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_prop</span> <span class="o">=</span> <span class="n">my_ens</span><span class="o">.</span><span class="n">property</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: system name (by default, taken by the name of the first System in the list)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">atomcount</span></code>: total number of atoms (taken from the first System in the list)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">energies</span></code>: dictionary containing the calculated electronic/vibronic energies, indexed by level of theory</p></li>
-</ul>
-<p>Some internal functions are also available:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">add(iterator)</span></code>: adds more <code class="docutils literal notranslate"><span class="pre">System</span></code> objects to the <code class="docutils literal notranslate"><span class="pre">Ensemble</span></code> from the provided iterator (e.g., another list)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">boltzmann_average(method_el,</span> <span class="pre">method_vib,</span> <span class="pre">temperature)</span></code>: calculates the Boltzmann-weighted ensemble energy at the given <code class="docutils literal notranslate"><span class="pre">temperature</span></code>, using the provided electronic (<code class="docutils literal notranslate"><span class="pre">method_el</span></code>) and vibronic (<code class="docutils literal notranslate"><span class="pre">method_vib</span></code>) levels of theory. Results are added to the <code class="docutils literal notranslate"><span class="pre">energies</span></code> dictionary.</p></li>
-</ul>
+<section id="properties-class">
+<h2><code class="docutils literal notranslate"><span class="pre">Properties</span></code> class<a class="headerlink" href="#properties-class" title="Permalink to this headline">#</a></h2>
 </section>
-<section id="mdtrajectory-objects">
-<h2><code class="docutils literal notranslate"><span class="pre">MDTrajectory</span></code> objects<a class="headerlink" href="#mdtrajectory-objects" title="Permalink to this headline">#</a></h2>
-<p>An <code class="docutils literal notranslate"><span class="pre">MDTrajectory</span></code> object is not usually initialized by the user, but is instead provided by the <strong>DFTB+</strong> module. For more details, refer to the <code class="docutils literal notranslate"><span class="pre">DFTB+</span> <span class="pre">&lt;link&gt;</span></code> page. However, it is still possible to manually generate an <code class="docutils literal notranslate"><span class="pre">MDTrajectory</span></code> object by providing the path <code class="docutils literal notranslate"><span class="pre">prefix</span></code> to the <code class="docutils literal notranslate"><span class="pre">&lt;prefix&gt;_md.out</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;prefix&gt;_geo_end.xyz</span></code> files, and the level of theory at which the DFTB+ simulation was ran:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">MDTrajectory</span>
-
-<span class="c1"># note, the following files must exist:</span>
-<span class="c1"># path/to/xyz/my_traj_md.out</span>
-<span class="c1"># path/to/xyz/my_traj_geo_end.xyz</span>
-<span class="n">my_traj</span> <span class="o">=</span> <span class="n">MDTrajectory</span><span class="p">(</span><span class="s2">&quot;path/to/xyz/my_traj&quot;</span><span class="p">,</span> <span class="s2">&quot;gfn2&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>This class does not have any useful property/method, but instead should be used as an on-the-fly generator of <code class="docutils literal notranslate"><span class="pre">System</span></code> objects corresponding to the requested frame of the MD simulation.</p>
-<p>Examples:</p>
-<ul class="simple">
-<li><p>Extract the last frame of the MD simulation as a System object:</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_frame</span> <span class="o">=</span> <span class="n">my_traj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Cycle over all frames and export the corresponding .xyz files:</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">my_traj</span><span class="p">:</span>
-    <span class="n">frame</span><span class="o">.</span><span class="n">write_xyz</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Note: individual “frames” are named according to the corresponding step/index of the MD simulation</p>
+<hr class="docutils" />
+<section id="system-class">
+<h2><code class="docutils literal notranslate"><span class="pre">System</span></code> class<a class="headerlink" href="#system-class" title="Permalink to this headline">#</a></h2>
+</section>
+<hr class="docutils" />
+<section id="ensemble-class">
+<h2><code class="docutils literal notranslate"><span class="pre">Ensemble</span></code> class<a class="headerlink" href="#ensemble-class" title="Permalink to this headline">#</a></h2>
+</section>
+<hr class="docutils" />
+<section id="mdtrajectory-class">
+<h2><code class="docutils literal notranslate"><span class="pre">MDTrajectory</span></code> class<a class="headerlink" href="#mdtrajectory-class" title="Permalink to this headline">#</a></h2>
+<hr class="docutils" />
 </section>
 </section>
 
@@ -490,6 +484,13 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../api.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">API Documentation</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>
