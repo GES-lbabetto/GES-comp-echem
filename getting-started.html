@@ -123,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="Guide/systems.html">
      <code class="docutils literal notranslate">
       <span class="pre">
-       systems
+       compechem.systems
       </span>
      </code>
      submodule
@@ -334,12 +334,21 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>The <strong>GES-comp-echem</strong> package can be imported in a Python script via the following syntax:</p>
+  <p>The <code class="docutils literal notranslate"><span class="pre">GES-comp-echem</span></code> package can be installed in a Conda environment with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">greenenergystorage</span> <span class="n">GES</span><span class="o">-</span><span class="n">comp</span><span class="o">-</span><span class="n">echem</span>
+</pre></div>
+</div>
+<p>The library can be imported in a Python script as a whole via the following syntax:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">compechem</span>
 </pre></div>
 </div>
-<p>For a more detailed explanation of the available features in each submodule, please refer to their specific page in this manual.</p>
-<p>For some examples on how to use this library, please check out the <code class="docutils literal notranslate"><span class="pre">tutorials</span> <span class="pre">&lt;link&gt;</span></code> section!</p>
+<p>Alternatively, individual submodules/classes/functions can be imported separately:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">systems</span>
+<span class="kn">from</span> <span class="nn">compechem.wrappers</span> <span class="kn">import</span> <span class="n">dftbplus</span>
+<span class="kn">from</span> <span class="nn">compechem.wrappers.packmol</span> <span class="kn">import</span> <span class="n">packmol_cube</span>
+</pre></div>
+</div>
+<p>For a more detailed explanation of the available features in each submodule, please refer to their specific page in this User Guide.</p>
 
     <script type="text/x-thebe-config">
     {
