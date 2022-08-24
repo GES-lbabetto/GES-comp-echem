@@ -108,6 +108,11 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../getting-started.html">
+   Getting Started
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../user-guide.html">
    User guide
@@ -430,22 +435,251 @@ title="Print to PDF"
 <span id="api-systems"></span><h1><code class="docutils literal notranslate"><span class="pre">compechem.systems</span></code> sub-module<a class="headerlink" href="#compechem-systems-sub-module" title="Permalink to this headline">#</a></h1>
 <section id="energies-class">
 <h2><code class="docutils literal notranslate"><span class="pre">Energies</span></code> class<a class="headerlink" href="#energies-class" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="compechem.systems.Energies">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">compechem.systems.</span></span><span class="sig-name descname"><span class="pre">Energies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">electronic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vibronic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.Energies" title="Permalink to this definition">#</a></dt>
+<dd><p>Molecular energies in Hartree</p>
+</dd></dl>
+
 </section>
 <hr class="docutils" />
 <section id="properties-class">
 <h2><code class="docutils literal notranslate"><span class="pre">Properties</span></code> class<a class="headerlink" href="#properties-class" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="compechem.systems.Properties">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">compechem.systems.</span></span><span class="sig-name descname"><span class="pre">Properties</span></span><a class="headerlink" href="#compechem.systems.Properties" title="Permalink to this definition">#</a></dt>
+<dd><p>Class containing system properties (such as pKa).</p>
+</dd></dl>
+
 </section>
 <hr class="docutils" />
 <section id="system-class">
 <h2><code class="docutils literal notranslate"><span class="pre">System</span></code> class<a class="headerlink" href="#system-class" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="compechem.systems.System">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">compechem.systems.</span></span><span class="sig-name descname"><span class="pre">System</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyz_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.System" title="Permalink to this definition">#</a></dt>
+<dd><p>System object.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.System.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#compechem.systems.System.name" title="Permalink to this definition">#</a></dt>
+<dd><p>name of the system, taken from the .xyz file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.System.charge">
+<span class="sig-name descname"><span class="pre">charge</span></span><a class="headerlink" href="#compechem.systems.System.charge" title="Permalink to this definition">#</a></dt>
+<dd><p>total charge of the system</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.System.spin">
+<span class="sig-name descname"><span class="pre">spin</span></span><a class="headerlink" href="#compechem.systems.System.spin" title="Permalink to this definition">#</a></dt>
+<dd><p>total spin of the system (2S+1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.System.atomcount">
+<span class="sig-name descname"><span class="pre">atomcount</span></span><a class="headerlink" href="#compechem.systems.System.atomcount" title="Permalink to this definition">#</a></dt>
+<dd><p>number of atoms contained in the system</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.System.geometry">
+<span class="sig-name descname"><span class="pre">geometry</span></span><a class="headerlink" href="#compechem.systems.System.geometry" title="Permalink to this definition">#</a></dt>
+<dd><p>list containing the atomic coordinates of the system</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.System.energies">
+<span class="sig-name descname"><span class="pre">energies</span></span><a class="headerlink" href="#compechem.systems.System.energies" title="Permalink to this definition">#</a></dt>
+<dd><p>dictionary containing the electronic/vibronic energies of the system,
+calculated at various levels of theory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.System.flags">
+<span class="sig-name descname"><span class="pre">flags</span></span><a class="headerlink" href="#compechem.systems.System.flags" title="Permalink to this definition">#</a></dt>
+<dd><p>list containing all “warning” flags which might be encountered during calculations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="compechem.systems.System.update_geometry">
+<span class="sig-name descname"><span class="pre">update_geometry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyz_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.System.update_geometry" title="Permalink to this definition">#</a></dt>
+<dd><p>Updates the current geometry from an external .xyz file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>xyz_file</strong> (<em>str</em>) – path with the .xyz file of the geometry containing the
+new coordinates</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="compechem.systems.System.write_gen">
+<span class="sig-name descname"><span class="pre">write_gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_side</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.System.write_gen" title="Permalink to this definition">#</a></dt>
+<dd><p>Writes the current geometry to a .gen file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gen_file</strong> (<em>str</em>) – path to the output .gen file</p></li>
+<li><p><strong>box_side</strong> (<em>float</em><em>, </em><em>optional</em>) – for periodic systems, defines the length (in Å) of the box side</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="compechem.systems.System.write_xyz">
+<span class="sig-name descname"><span class="pre">write_xyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyz_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.System.write_xyz" title="Permalink to this definition">#</a></dt>
+<dd><p>Writes the current geometry to a .xyz file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>xyz_file</strong> (<em>str</em>) – path to the output .xyz file</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <hr class="docutils" />
 <section id="ensemble-class">
 <h2><code class="docutils literal notranslate"><span class="pre">Ensemble</span></code> class<a class="headerlink" href="#ensemble-class" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="compechem.systems.Ensemble">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">compechem.systems.</span></span><span class="sig-name descname"><span class="pre">Ensemble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">systems_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.Ensemble" title="Permalink to this definition">#</a></dt>
+<dd><p>Ensemble object, containing a series of System objects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.Ensemble.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#compechem.systems.Ensemble.name" title="Permalink to this definition">#</a></dt>
+<dd><p>name of the system represented in the ensemble, taken from the first element of
+the ensemble</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.Ensemble.atomcount">
+<span class="sig-name descname"><span class="pre">atomcount</span></span><a class="headerlink" href="#compechem.systems.Ensemble.atomcount" title="Permalink to this definition">#</a></dt>
+<dd><p>number of atoms contained each ensemble, taken from the first element of the
+ensemble</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.Ensemble.energies">
+<span class="sig-name descname"><span class="pre">energies</span></span><a class="headerlink" href="#compechem.systems.Ensemble.energies" title="Permalink to this definition">#</a></dt>
+<dd><p>dictionary containing the electronic/vibronic energies of the systems,
+calculated at various levels of theory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="compechem.systems.Ensemble.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.Ensemble.add" title="Permalink to this definition">#</a></dt>
+<dd><p>append more Systems to the ensemble from an iterator object (e.g., MDTrajectory)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>iterator</strong> (<em>iterable</em>) – iterator object (e.g., MDTrajectory object)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="compechem.systems.Ensemble.boltzmann_average">
+<span class="sig-name descname"><span class="pre">boltzmann_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method_el</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_vib</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">297.15</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.Ensemble.boltzmann_average" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculates the average free Gibbs energy of the ensemble (in Hartree), weighted
+for each molecule by its Boltzmann factor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method_el</strong> (<em>str</em>) – level of theory for the electronic energies</p></li>
+<li><p><strong>method_vib</strong> (<em>str</em><em>, </em><em>optional</em>) – level of theory for the vibronic contributions, if method_vib is None (default),
+the ensemble energy will be evaluated only considering the electronic component</p></li>
+<li><p><strong>temperature</strong> (<em>float</em>) – temperature at which to calculate the Boltzmann average, by default 297.15 K</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>Creates an Energies object with the total free Gibbs energy of the ensemble.</em></p></li>
+<li><p><strong>NOTE</strong> (<em>the vibronic contributions are included in the electronic component, which</em>)</p></li>
+<li><p><em>actually contains the TOTAL energy of the system. Maybe in the future I’ll think of</em></p></li>
+<li><p><em>how to separate the two contributions - LB</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="compechem.systems.Ensemble.read_energies">
+<span class="sig-name descname"><span class="pre">read_energies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.Ensemble.read_energies" title="Permalink to this definition">#</a></dt>
+<dd><p>reads energies from trajectory file (parsed by tools.save_dftb_trajectory()) and
+calculates the average energy for the given trajectory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>method</strong> (<em>str</em>) – level of theory to assign to the self.energies dictionary key</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <hr class="docutils" />
 <section id="mdtrajectory-class">
 <h2><code class="docutils literal notranslate"><span class="pre">MDTrajectory</span></code> class<a class="headerlink" href="#mdtrajectory-class" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="compechem.systems.MDTrajectory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">compechem.systems.</span></span><span class="sig-name descname"><span class="pre">MDTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">traj_filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.MDTrajectory" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
 <hr class="docutils" />
 </section>
 </section>
