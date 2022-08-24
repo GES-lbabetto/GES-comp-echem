@@ -553,18 +553,18 @@ title="Print to PDF"
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mol</strong> (<em>System object</em>) – input molecule to use in the calculation</p></li>
+<li><p><strong>mol</strong> (<em>System object</em>) – input system to use in the calculation</p></li>
 <li><p><strong>ncores</strong> (<em>int</em><em>, </em><em>optional</em>) – number of cores, by default all available cores</p></li>
 <li><p><strong>maxcore</strong> (<em>dummy variable</em>) – dummy variable used for compatibility with Orca calculations</p></li>
-<li><p><strong>charge</strong> (<em>int</em><em>, </em><em>optional</em>) – Total charge of the molecule. Default is taken from the input molecule.</p></li>
-<li><p><strong>spin</strong> (<em>int</em><em>, </em><em>optional</em>) – Total spin of the molecule. Default is taken from the input molecule.</p></li>
-<li><p><strong>inplace</strong> (<em>bool</em><em>, </em><em>optional</em>) – updates info for the input molecule instead of outputting a new molecule object,
+<li><p><strong>charge</strong> (<em>int</em><em>, </em><em>optional</em>) – Total charge of the system. Default is taken from the input system.</p></li>
+<li><p><strong>spin</strong> (<em>int</em><em>, </em><em>optional</em>) – Total spin of the system. Default is taken from the input system.</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em><em>, </em><em>optional</em>) – updates info for the input system instead of outputting a new system object,
 by default False</p></li>
 <li><p><strong>remove_tdir</strong> (<em>bool</em><em>, </em><em>optional</em>) – temporary work directory will be removed, by default True</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>newmol</strong> – Output molecule containing the new energies.</p>
+<dd class="field-even"><p><strong>newmol</strong> – Output system containing the new energies.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>System object</p>
@@ -579,21 +579,21 @@ by default False</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mol</strong> (<em>System object</em>) – Input molecule to use in the calculation</p></li>
+<li><p><strong>mol</strong> (<em>System object</em>) – Input system to use in the calculation</p></li>
 <li><p><strong>ncores</strong> (<em>int</em><em>, </em><em>optional</em>) – number of cores, by default all available cores</p></li>
 <li><p><strong>maxcore</strong> (<em>dummy variable</em>) – dummy variable used for compatibility with Orca calculations</p></li>
-<li><p><strong>charge</strong> (<em>int</em><em>, </em><em>optional</em>) – Total charge of the molecule. Default is taken from the input molecule.</p></li>
-<li><p><strong>spin</strong> (<em>int</em><em>, </em><em>optional</em>) – Total spin of the molecule. Default is taken from the input molecule.</p></li>
-<li><p><strong>inplace</strong> (<em>bool</em><em>, </em><em>optional</em>) – updates info for the input molecule instead of outputting a new molecule object,
+<li><p><strong>charge</strong> (<em>int</em><em>, </em><em>optional</em>) – Total charge of the system. Default is taken from the input system.</p></li>
+<li><p><strong>spin</strong> (<em>int</em><em>, </em><em>optional</em>) – Total spin of the system. Default is taken from the input system.</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em><em>, </em><em>optional</em>) – updates info for the input system instead of outputting a new system object,
 by default False</p></li>
 <li><p><strong>remove_tdir</strong> (<em>bool</em><em>, </em><em>optional</em>) – Temporary work directory will be removed, by default True</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><ul class="simple">
-<li><p><strong>newmol</strong> (<em>System object</em>) – Output molecule containing the new geometry and energies.</p></li>
+<li><p><strong>newmol</strong> (<em>System object</em>) – Output system containing the new geometry and energies.</p></li>
 <li><p><em>If a dissociation or a cyclization is observed, ignore the calculation and return the</em></p></li>
-<li><p><em>original “mol” molecule.</em></p></li>
+<li><p><em>original “mol” system.</em></p></li>
 </ul>
 </p>
 </dd>
@@ -607,18 +607,18 @@ by default False</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mol</strong> (<em>System object</em>) – Input molecule to use in the calculation.</p></li>
+<li><p><strong>mol</strong> (<em>System object</em>) – Input system to use in the calculation.</p></li>
 <li><p><strong>ncores</strong> (<em>int</em><em>, </em><em>optional</em>) – number of cores, by default all available cores</p></li>
 <li><p><strong>maxcore</strong> (<em>dummy variable</em>) – dummy variable used for compatibility with Orca calculations</p></li>
-<li><p><strong>charge</strong> (<em>int</em><em>, </em><em>optional</em>) – total charge of the molecule. Default is taken from the input molecule.</p></li>
-<li><p><strong>spin</strong> (<em>int</em><em>, </em><em>optional</em>) – total spin of the molecule. Default is taken from the input molecule.</p></li>
-<li><p><strong>inplace</strong> (<em>bool</em><em>, </em><em>optional</em>) – updates info for the input molecule instead of outputting a new molecule object,
+<li><p><strong>charge</strong> (<em>int</em><em>, </em><em>optional</em>) – total charge of the system. Default is taken from the input system.</p></li>
+<li><p><strong>spin</strong> (<em>int</em><em>, </em><em>optional</em>) – total spin of the system. Default is taken from the input system.</p></li>
+<li><p><strong>inplace</strong> (<em>bool</em><em>, </em><em>optional</em>) – updates info for the input system instead of outputting a new system object,
 by default False</p></li>
 <li><p><strong>remove_tdir</strong> (<em>bool</em><em>, </em><em>optional</em>) – Temporary work directory will be removed, by default True</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>newmol</strong> – Output molecule containing the new energies.</p>
+<dd class="field-even"><p><strong>newmol</strong> – Output system containing the new energies.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>System object</p>
