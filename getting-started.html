@@ -363,6 +363,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/GES-lbabetto/GES-comp-echem/main?urlpath=tree/docs/getting-started.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -376,10 +405,19 @@ title="Fullscreen mode"
   </span>
 
 </button>
-<a href="https://github.com/GES-lbabetto/GES-comp-echem"
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/GES-lbabetto/GES-comp-echem"
    class="headerbtn"
    data-toggle="tooltip"
-data-placement="bottom"
+data-placement="left"
 title="Source repository"
 >
   
@@ -387,8 +425,31 @@ title="Source repository"
 <span class="headerbtn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-
+<span class="headerbtn__text-container">repository</span>
 </a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/GES-lbabetto/GES-comp-echem/issues/new?title=Issue%20on%20page%20%2Fgetting-started.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -398,7 +459,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/getting-started.md"
+        <a href="_sources/getting-started.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -409,7 +470,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -435,12 +496,63 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#my-first-calculation">
+   My first calculation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-the-library">
+     Importing the library
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-the-system-object">
+     Creating the System object
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-xtbinput-object">
+     Creating a XtbInput object
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carrying-out-the-calculation">
+     Carrying out the calculation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing-the-results">
+     Printing the results
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -452,6 +564,46 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#my-first-calculation">
+   My first calculation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-the-library">
+     Importing the library
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-the-system-object">
+     Creating the System object
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-xtbinput-object">
+     Creating a XtbInput object
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carrying-out-the-calculation">
+     Carrying out the calculation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing-the-results">
+     Printing the results
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -460,7 +612,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h1>
+<span id="id1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">GES-comp-echem</span></code> package can be installed in a Conda environment with the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">greenenergystorage</span> <span class="n">GES</span><span class="o">-</span><span class="n">comp</span><span class="o">-</span><span class="n">echem</span>
 </pre></div>
@@ -476,6 +628,137 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>For a more detailed explanation of the available features in each submodule, please refer to their specific page in this User Guide.</p>
+<hr class="docutils" />
+<section id="my-first-calculation">
+<h2>My first calculation<a class="headerlink" href="#my-first-calculation" title="Permalink to this headline">#</a></h2>
+<p>Let us go through the very basics of using the library. At the very least, you will need the geometrical structure of the system you want to study, in the form of a .xyz file. You can obtain it from available databases, or you can draw the structures yourself in programs such as <a class="reference external" href="https://avogadro.cc/">Avogadro</a></p>
+<p>Below is the <code class="docutils literal notranslate"><span class="pre">water.xyz</span></code> file, containing the structure of the water molecule, which we will use in these examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>
+
+<span class="n">O</span>   <span class="mf">0.000</span>  <span class="o">-</span><span class="mf">0.736</span>   <span class="mf">0.000</span>  
+<span class="n">H</span>   <span class="mf">1.442</span>   <span class="mf">0.368</span>   <span class="mf">0.000</span>  
+<span class="n">H</span>  <span class="o">-</span><span class="mf">1.442</span>   <span class="mf">0.368</span>   <span class="mf">0.000</span>  
+</pre></div>
+</div>
+<p>If you open the file in a molecular visualization software, you will notice the structure is not really right. We can then optimise the structure with a software of choice. We will use <a class="reference external" href="https://github.com/grimme-lab/xtb">xTB</a> in this example, thanks to its balance between accuracy and speed. The library needs the program to already be installed (preferably via conda) and ready to go.</p>
+<section id="importing-the-library">
+<h3>Importing the library<a class="headerlink" href="#importing-the-library" title="Permalink to this headline">#</a></h3>
+<p>Before starting, we need to create a Python script and import the necessary modules from the library. We need the <code class="docutils literal notranslate"><span class="pre">System</span></code> submodule to store the information about our water molecule, and the <code class="docutils literal notranslate"><span class="pre">XtbInput</span></code> submodule to carry out the actual calculation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">System</span>
+<span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">XtbInput</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-the-system-object">
+<h3>Creating the System object<a class="headerlink" href="#creating-the-system-object" title="Permalink to this headline">#</a></h3>
+<p>After importing the necessary modules, we can create our molecule, by indicating the (relative, or complete) path where the .xyz file is located:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;example_files/water.xyz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-xtbinput-object">
+<h3>Creating a XtbInput object<a class="headerlink" href="#creating-a-xtbinput-object" title="Permalink to this headline">#</a></h3>
+<p>We can now setup a “calculator” object using the <code class="docutils literal notranslate"><span class="pre">XtbInput</span></code> wrapper. Most of these wrappers come with sensible default options for electrochemical calculations in solution. To see all the available options, please refer to the <a class="reference internal" href="Guide/wrappers.html#guide-wrappers"><span class="std std-ref">wrappers</span></a> section.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xtb</span> <span class="o">=</span> <span class="n">XtbInput</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="carrying-out-the-calculation">
+<h3>Carrying out the calculation<a class="headerlink" href="#carrying-out-the-calculation" title="Permalink to this headline">#</a></h3>
+<p>We can now carry out the calculation. We want to do a geometry optimization on our water molecule, and we want the original information for the molecule to be updated after the calculation (<code class="docutils literal notranslate"><span class="pre">inplace</span></code> flag). The syntax for this calculation is as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xtb</span><span class="o">.</span><span class="n">opt</span><span class="p">(</span><span class="n">water</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">xtb</span><span class="o">.</span><span class="n">opt</span><span class="p">(</span><span class="n">water</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/compechem/wrappers/xtb.py:212,</span> in <span class="ni">XtbInput.opt</span><span class="nt">(self, mol, ncores, maxcore, charge, spin, inplace, remove_tdir)</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>         <span class="sa">f</span><span class="s2">&quot;xtb </span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.xyz --</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="si">}</span><span class="s2"> --chrg </span><span class="si">{</span><span class="n">charge</span><span class="si">}</span><span class="s2"> --uhf </span><span class="si">{</span><span class="n">spin</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2"> --ohess -P </span><span class="si">{</span><span class="n">ncores</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">optionals</span><span class="si">}</span><span class="s2"> &gt; output.out 2&gt;&gt; output.err&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">212</span> <span class="k">if</span> <span class="n">dissociation_check</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dissociation spotted for </span><span class="si">{</span><span class="n">mol</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">add_flag</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>         <span class="n">mol</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span>         <span class="sa">f</span><span class="s2">&quot;Dissociation occurred during geometry optimization with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/compechem/tools/internaltools.py:101,</span> in <span class="ni">dissociation_check</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="k">def</span> <span class="nf">dissociation_check</span><span class="p">():</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span>     <span class="sd">&quot;&quot;&quot;Checks if a dissociation has occurred (e.g., during a</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span><span class="sd">     geometry optimization)</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span><span class="sd">     False, if a dissociation is not detected</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">101</span>     <span class="n">mol_file</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.mol&quot;</span><span class="p">)][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="n">end_mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromMolFile</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="n">mol_file</span><span class="p">,</span> <span class="n">sanitize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strictParsing</span><span class="o">=</span><span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="n">end_smiles</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">end_mol</span><span class="p">)</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="printing-the-results">
+<h3>Printing the results<a class="headerlink" href="#printing-the-results" title="Permalink to this headline">#</a></h3>
+<p>If you want to see the data currently stored in our <code class="docutils literal notranslate"><span class="pre">System</span></code> object, simply ask for it to be printed to screen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">water</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== System: water === 
+
+Number of atoms: 3
+Charge: 0
+Spin: 1
+
+--- Warnings ---
+
+--- Energies (Eh) --- 
+* Method: gfn2
+Electronic: -5.085021284485 Eh
+Vibronic: 0.002047859243 Eh
+
+--- Coordinates (Å) --- 
+
+O	-0.00000460653857	-0.38108317129456	0.00000066512472
+H	0.77437021704155	0.19053853063580	-0.00000303561805
+H	-0.77436561050298	0.19054464065875	0.00000237049333
+
+--- Velocities (Å/ps) --- 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Et voilà! You have successfully carried out a geometry optimization for the water molecule using the <code class="docutils literal notranslate"><span class="pre">GES-comp-echem</span></code> library!</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

@@ -376,10 +376,19 @@ title="Fullscreen mode"
   </span>
 
 </button>
-<a href="https://github.com/GES-lbabetto/GES-comp-echem"
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/GES-lbabetto/GES-comp-echem"
    class="headerbtn"
    data-toggle="tooltip"
-data-placement="bottom"
+data-placement="left"
 title="Source repository"
 >
   
@@ -387,8 +396,31 @@ title="Source repository"
 <span class="headerbtn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-
+<span class="headerbtn__text-container">repository</span>
 </a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/GES-lbabetto/GES-comp-echem/issues/new?title=Issue%20on%20page%20%2FAPI/systems.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -670,10 +702,32 @@ title="Print to PDF"
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.System.box_side">
+<span class="sig-name descname"><span class="pre">box_side</span></span><a class="headerlink" href="#compechem.systems.System.box_side" title="Permalink to this definition">#</a></dt>
+<dd><p>for periodic systems, defines the length (in Å) of the box side</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="compechem.systems.System.energies">
 <span class="sig-name descname"><span class="pre">energies</span></span><a class="headerlink" href="#compechem.systems.System.energies" title="Permalink to this definition">#</a></dt>
 <dd><p>dictionary containing the electronic/vibronic energies of the system,
 calculated at various levels of theory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.System.properties">
+<span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#compechem.systems.System.properties" title="Permalink to this definition">#</a></dt>
+<dd><p>dictionary containing the properties of the system, such as pKa</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>dict</p>
@@ -775,6 +829,17 @@ calculated at various levels of theory</p>
 </dl>
 </dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="compechem.systems.Ensemble.container">
+<span class="sig-name descname"><span class="pre">container</span></span><a class="headerlink" href="#compechem.systems.Ensemble.container" title="Permalink to this definition">#</a></dt>
+<dd><p>iterable returning System objects generator for creating the Ensemble.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="compechem.systems.Ensemble.add">
 <span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.Ensemble.add" title="Permalink to this definition">#</a></dt>
@@ -817,6 +882,7 @@ the ensemble energy will be evaluated only considering the electronic component<
 <span class="sig-name descname"><span class="pre">read_energies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.systems.Ensemble.read_energies" title="Permalink to this definition">#</a></dt>
 <dd><p>reads energies from trajectory file (parsed by tools.save_dftb_trajectory()) and
 calculates the average energy for the given trajectory</p>
+<p>CURRENTLY NOT WORKING!!!</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>method</strong> (<em>str</em>) – level of theory to assign to the self.energies dictionary key</p>
