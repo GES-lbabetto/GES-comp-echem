@@ -759,19 +759,19 @@ title="Print to PDF"
 <span class="g g-Whitespace">    </span><span class="mi">219</span>         <span class="sa">f</span><span class="s2">&quot;Dissociation occurred during geometry optimization with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/compechem/tools/internaltools.py:101,</span> in <span class="ni">dissociation_check</span><span class="nt">()</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/compechem/tools/internaltools.py:97,</span> in <span class="ni">dissociation_check</span><span class="nt">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="k">def</span> <span class="nf">dissociation_check</span><span class="p">():</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span>     <span class="sd">&quot;&quot;&quot;Checks if a dissociation has occurred (e.g., during a</span>
-<span class="g g-Whitespace">     </span><span class="mi">89</span><span class="sd">     geometry optimization)</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span>     <span class="sd">&quot;&quot;&quot;Checks if a dissociation has occurred (e.g., during a geometry optimization).</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span><span class="sd">     Requires the presence of a .mol file in the current directory.</span>
 <span class="g g-Whitespace">     </span><span class="mi">90</span><span class="sd"> </span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span><span class="sd">     False, if a dissociation is not detected</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">101</span>     <span class="n">mol_file</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.mol&quot;</span><span class="p">)][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="n">end_mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromMolFile</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="n">mol_file</span><span class="p">,</span> <span class="n">sanitize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strictParsing</span><span class="o">=</span><span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="n">end_smiles</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">end_mol</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span><span class="sd">     False, if a dissociation is not detected</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">97</span>     <span class="n">mol_file</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.mol&quot;</span><span class="p">)][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="n">end_mol</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolFromMolFile</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>         <span class="n">mol_file</span><span class="p">,</span> <span class="n">sanitize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">removeHs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strictParsing</span><span class="o">=</span><span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="n">end_smiles</span> <span class="o">=</span> <span class="n">Chem</span><span class="o">.</span><span class="n">MolToSmiles</span><span class="p">(</span><span class="n">end_mol</span><span class="p">)</span>
 
 <span class="ne">IndexError</span>: list index out of range
 </pre></div>

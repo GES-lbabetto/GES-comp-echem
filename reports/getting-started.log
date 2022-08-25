@@ -37,19 +37,19 @@ File [0;32m/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/c
 [1;32m    219[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mDissociation occurred during geometry optimization with [39m[38;5;132;01m{[39;00m[38;5;28mself[39m[38;5;241m.[39mmethod[38;5;132;01m}[39;00m[38;5;124m.[39m[38;5;124m"[39m,
 [1;32m    220[0m     )
 
-File [0;32m/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/compechem/tools/internaltools.py:101[0m, in [0;36mdissociation_check[0;34m()[0m
+File [0;32m/opt/hostedtoolcache/Python/3.8.13/x64/lib/python3.8/site-packages/compechem/tools/internaltools.py:97[0m, in [0;36mdissociation_check[0;34m()[0m
 [1;32m     87[0m [38;5;28;01mdef[39;00m [38;5;21mdissociation_check[39m():
-[1;32m     88[0m     [38;5;124;03m"""Checks if a dissociation has occurred (e.g., during a[39;00m
-[1;32m     89[0m [38;5;124;03m    geometry optimization)[39;00m
+[1;32m     88[0m     [38;5;124;03m"""Checks if a dissociation has occurred (e.g., during a geometry optimization).[39;00m
+[1;32m     89[0m [38;5;124;03m    Requires the presence of a .mol file in the current directory.[39;00m
 [1;32m     90[0m 
 [0;32m   (...)[0m
-[1;32m     98[0m [38;5;124;03m    False, if a dissociation is not detected[39;00m
-[1;32m     99[0m [38;5;124;03m    """[39;00m
-[0;32m--> 101[0m     mol_file [38;5;241m=[39m [43m[[49m[43mf[49m[43m [49m[38;5;28;43;01mfor[39;49;00m[43m [49m[43mf[49m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[43mos[49m[38;5;241;43m.[39;49m[43mlistdir[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m.[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m [49m[38;5;28;43;01mif[39;49;00m[43m [49m[43mf[49m[38;5;241;43m.[39;49m[43mendswith[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m.mol[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m][49m[43m[[49m[38;5;241;43m-[39;49m[38;5;241;43m1[39;49m[43m][49m
-[1;32m    102[0m     end_mol [38;5;241m=[39m Chem[38;5;241m.[39mMolFromMolFile(
-[1;32m    103[0m         mol_file, sanitize[38;5;241m=[39m[38;5;28;01mFalse[39;00m, removeHs[38;5;241m=[39m[38;5;28;01mFalse[39;00m, strictParsing[38;5;241m=[39m[38;5;28;01mFalse[39;00m
-[1;32m    104[0m     )
-[1;32m    105[0m     end_smiles [38;5;241m=[39m Chem[38;5;241m.[39mMolToSmiles(end_mol)
+[1;32m     94[0m [38;5;124;03m    False, if a dissociation is not detected[39;00m
+[1;32m     95[0m [38;5;124;03m    """[39;00m
+[0;32m---> 97[0m     mol_file [38;5;241m=[39m [43m[[49m[43mf[49m[43m [49m[38;5;28;43;01mfor[39;49;00m[43m [49m[43mf[49m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[43mos[49m[38;5;241;43m.[39;49m[43mlistdir[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m.[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m [49m[38;5;28;43;01mif[39;49;00m[43m [49m[43mf[49m[38;5;241;43m.[39;49m[43mendswith[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m.mol[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m][49m[43m[[49m[38;5;241;43m-[39;49m[38;5;241;43m1[39;49m[43m][49m
+[1;32m     98[0m     end_mol [38;5;241m=[39m Chem[38;5;241m.[39mMolFromMolFile(
+[1;32m     99[0m         mol_file, sanitize[38;5;241m=[39m[38;5;28;01mFalse[39;00m, removeHs[38;5;241m=[39m[38;5;28;01mFalse[39;00m, strictParsing[38;5;241m=[39m[38;5;28;01mFalse[39;00m
+[1;32m    100[0m     )
+[1;32m    101[0m     end_smiles [38;5;241m=[39m Chem[38;5;241m.[39mMolToSmiles(end_mol)
 
 [0;31mIndexError[0m: list index out of range
 IndexError: list index out of range
