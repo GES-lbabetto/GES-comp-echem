@@ -682,12 +682,12 @@ title="Print to PDF"
 <dl class="py function">
 <dt class="sig sig-object py" id="compechem.algorithms.oneeloxidation.find_highest_protonation_state">
 <span class="sig-prename descclassname"><span class="pre">compechem.algorithms.oneeloxidation.</span></span><span class="sig-name descname"><span class="pre">find_highest_protonation_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../systems.html#compechem.systems.System" title="compechem.systems.System"><span class="pre">compechem.systems.System</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxcore</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">350</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conformer_search</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.algorithms.oneeloxidation.find_highest_protonation_state" title="Permalink to this definition">#</a></dt>
-<dd><p>Calculates the highest protonation state for a given molecule, as the first protomer
+<dd><p>Calculates the highest protonation state for a given system, as the first protomer
 with pKa &lt; 0</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mol</strong> (<em>System object</em>) – System object of the molecule under examination</p></li>
+<li><p><strong>mol</strong> (<em>System object</em>) – System object of the system under examination</p></li>
 <li><p><strong>method</strong> (<em>calculator</em>) – Calculator object (i.e., XtbInput/OrcaInput object) giving the level of theory at which
 to evaluate the pKa for the protomers.</p></li>
 <li><p><strong>ncores</strong> (<em>int</em>) – number of cores, by default all available cores</p></li>
@@ -696,7 +696,7 @@ to evaluate the pKa for the protomers.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>currently_protonated</strong> – System object representing the highest protonation state for the input molecule</p>
+<dd class="field-even"><p><strong>currently_protonated</strong> – System object representing the highest protonation state for the input system</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>System object</p>
@@ -715,7 +715,7 @@ to evaluate the pKa for the protomers.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mol</strong> (<em>System object</em>) – System object of the molecule under examination</p></li>
+<li><p><strong>mol</strong> (<em>System object</em>) – System object of the system under examination</p></li>
 <li><p><strong>method</strong> (<em>calculator</em>) – Calculator object (i.e., XtbInput/OrcaInput object) giving the level of theory at which
 to evaluate the pKa for the deprotomers.</p></li>
 <li><p><strong>ncores</strong> (<em>int</em>) – number of cores, by default all available cores</p></li>
@@ -724,7 +724,7 @@ to evaluate the pKa for the deprotomers.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>mol_list</strong> – List containing all the deprotomers with pKa &lt; 20 for the given molecule</p>
+<dd class="field-even"><p><strong>mol_list</strong> – List containing all the deprotomers with pKa &lt; 20 for the given system</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>list</p>
@@ -754,7 +754,7 @@ to evaluate the pKa for the deprotomers.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>species</strong> – Species object with the singlets and radicals for the given input molecule</p>
+<dd class="field-even"><p><strong>species</strong> – Species object with the singlets and radicals for the given input system</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>Species</p>
@@ -769,11 +769,11 @@ to evaluate the pKa for the deprotomers.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="compechem.algorithms.oneeloxidation.generate_potential_data">
 <span class="sig-prename descclassname"><span class="pre">compechem.algorithms.oneeloxidation.</span></span><span class="sig-name descname"><span class="pre">generate_potential_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">compechem.algorithms.oneeloxidation.Species</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pH_step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#compechem.algorithms.oneeloxidation.generate_potential_data" title="Permalink to this definition">#</a></dt>
-<dd><p>Calculates the 1-el oxidation potential for the given molecule in the pH range 0-14</p>
+<dd><p>Calculates the 1-el oxidation potential for the given system in the pH range 0-14</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>species</strong> (<em>Species</em>) – Container object with the singlet and radical deprotomers for the input molecule</p></li>
+<li><p><strong>species</strong> (<em>Species</em>) – Container object with the singlet and radical deprotomers for the input system</p></li>
 <li><p><strong>method</strong> (<em>calculator</em>) – Calculator object (i.e., XtbInput/OrcaInput object) giving the level of theory at which
 to evaluate the pKa for the deprotomers.</p></li>
 <li><p><strong>pH_step</strong> (<em>float</em>) – pH step at which the potential is calculated (by default, 1.0 pH units)</p></li>
@@ -794,7 +794,7 @@ to evaluate the pKa for the deprotomers.</p></li>
 <h2><code class="docutils literal notranslate"><span class="pre">one_electron_oxidation_potentials</span></code> class<a class="headerlink" href="#one-electron-oxidation-potentials-class" title="Permalink to this headline">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="compechem.algorithms.oneeloxidation.one_electron_oxidation_potentials">
-<span class="sig-prename descclassname"><span class="pre">compechem.algorithms.oneeloxidation.</span></span><span class="sig-name descname"><span class="pre">one_electron_oxidation_potentials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../systems.html#compechem.systems.System" title="compechem.systems.System"><span class="pre">compechem.systems.System</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxcore</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">350</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conformer_search</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tautomer_search</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pH_step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.algorithms.oneeloxidation.one_electron_oxidation_potentials" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">compechem.algorithms.oneeloxidation.</span></span><span class="sig-name descname"><span class="pre">one_electron_oxidation_potentials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../systems.html#compechem.systems.System" title="compechem.systems.System"><span class="pre">compechem.systems.System</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncores</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxcore</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">350</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conformer_search</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tautomer_search</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pH_step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compechem.algorithms.oneeloxidation.one_electron_oxidation_potentials" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </section>

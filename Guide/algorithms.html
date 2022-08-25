@@ -524,12 +524,40 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-electron-oxidation-potentials">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     one_electron_oxidation_potentials()
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -541,6 +569,23 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-electron-oxidation-potentials">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     one_electron_oxidation_potentials()
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -550,7 +595,31 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="compechem-algorithms-submodule">
 <span id="guide-algorithms"></span><h1><code class="docutils literal notranslate"><span class="pre">compechem.algorithms</span></code> submodule<a class="headerlink" href="#compechem-algorithms-submodule" title="Permalink to this headline">#</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">algorithms</span></code> submodule</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">algorithms</span></code> submodule provides a series of high-level algorithms to automatically calculate some physical observables, considering the most appropriate states for the input systems. The user is only required to provide a generic starting structure for the system of interest, and the algorithm will make sure to generate the correct “state”, optimising components such as geometry, conformer/tautomer, protonation state at the pH in question, etc.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">algorithms</span></code> module can be imported via the following syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">algorithms</span>
+</pre></div>
+</div>
+<p>while individual methods can be imported as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.algorithms</span> <span class="kn">import</span> <span class="n">one_electron_oxidation_potentials</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<section id="one-electron-oxidation-potentials">
+<h2><code class="docutils literal notranslate"><span class="pre">one_electron_oxidation_potentials()</span></code><a class="headerlink" href="#one-electron-oxidation-potentials" title="Permalink to this headline">#</a></h2>
+<p>Calculates the 1-electron oxidation potential of a system, provided the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">system</span></code> (<code class="docutils literal notranslate"><span class="pre">System</span></code>): starting system, in the reduced state</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code> (any Input type from a <code class="docutils literal notranslate"><span class="pre">wrapper</span></code>): level of theory at which the potential is calculated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ncores</span></code> (<code class="docutils literal notranslate"><span class="pre">int</span></code>): number of cores used in the calculations, by default all available cores</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maxcore</span></code> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, default: <code class="docutils literal notranslate"><span class="pre">350</span></code>): memory per core, in MB</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conformer_search</span></code> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, default: <code class="docutils literal notranslate"><span class="pre">True</span></code>): if True, also considers the lowest-energy conformers at each stage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tautomer_search</span></code> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, default: <code class="docutils literal notranslate"><span class="pre">True</span></code>): if True, also considers the lowest-energy tautomer at each stage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pH_step</span></code> (<code class="docutils literal notranslate"><span class="pre">float</span></code>, default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code>): calculates the redox potential at every pH_step units of pH</p></li>
+</ul>
+<p>and returns an iterator which yields the 1-electron oxidation potential at each <code class="docutils literal notranslate"><span class="pre">pH_step</span></code> unit of pH.</p>
+<p>The algorithm (optionally) determines the lowest-energy conformer and tautomer for every species under consideration. It also determines the correct protonation states, for both reduced and oxidised forms, at every pH value, optimising the geometry and calculating the energies at the requested level of theory.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

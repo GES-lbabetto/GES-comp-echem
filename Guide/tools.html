@@ -524,12 +524,67 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cyclization-check">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cyclization_check()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dissociation-check">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dissociation_check()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-multixyz">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     split_multixyz()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maxdist">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     maxdist()
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -541,6 +596,50 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cyclization-check">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     cyclization_check()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dissociation-check">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dissociation_check()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-multixyz">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     split_multixyz()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maxdist">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     maxdist()
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -550,7 +649,43 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="compechem-tools-submodule">
 <span id="guide-tools"></span><h1><code class="docutils literal notranslate"><span class="pre">compechem.tools</span></code> submodule<a class="headerlink" href="#compechem-tools-submodule" title="Permalink to this headline">#</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">tools</span></code> submodule</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">tools</span></code> submodule contains a series of useful functions, mostly used internally by the library. The user is not expected to interact with this submodule during normal operation, but some functions might come in handy for debugging or advanced users, and will be reported here. For a comprehensive list of all functions available in the <code class="docutils literal notranslate"><span class="pre">tools</span></code> submodule, including the ones only meant for internal use, please refer to the <a class="reference internal" href="../API/tools.html#api-tools"><span class="std std-ref">API</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">tools</span></code> module can be imported via the following syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem</span> <span class="kn">import</span> <span class="n">tools</span>
+</pre></div>
+</div>
+<p>while individual functions can be imported as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.tools</span> <span class="kn">import</span> <span class="n">split_multixyz</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<section id="cyclization-check">
+<h2><code class="docutils literal notranslate"><span class="pre">cyclization_check()</span></code><a class="headerlink" href="#cyclization-check" title="Permalink to this headline">#</a></h2>
+<p>Checks if a cyclization has occurred (e.g., during a geometry optimization), or if a ring opening has occurred.</p>
+<p>The function accepts two arguments, <code class="docutils literal notranslate"><span class="pre">start_file</span></code> and <code class="docutils literal notranslate"><span class="pre">end_file</span></code>, both strings, containing the path to the two geometries to be compared.</p>
+<p>The function uses the <a class="reference external" href="https://github.com/grimme-lab/crest">CREST</a> program to generate the topology for each structure, and counts the number of rings. If a mismatch in the number of rings is observed, returns <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="dissociation-check">
+<h2><code class="docutils literal notranslate"><span class="pre">dissociation_check()</span></code><a class="headerlink" href="#dissociation-check" title="Permalink to this headline">#</a></h2>
+<p>Checks if a dissociation has occurred (e.g., during a geometry optimization).</p>
+<p>The function looks for a <code class="docutils literal notranslate"><span class="pre">.mol</span></code> file in the current directory, and generates the corresponding <a class="reference external" href="https://it.wikipedia.org/wiki/SMILES">SMILES</a> string. If a dot (“.”) is present in the SMILES string, it means there are two separate molecules in the structure, and therefore a dissociation has occurred.</p>
+</section>
+<hr class="docutils" />
+<section id="split-multixyz">
+<h2><code class="docutils literal notranslate"><span class="pre">split_multixyz()</span></code><a class="headerlink" href="#split-multixyz" title="Permalink to this headline">#</a></h2>
+<p>Splits a .xyz file containing multiple structures into individual <code class="docutils literal notranslate"><span class="pre">System</span></code> objects. For example, used to generate each separate conformer from a “global” .xyz file containing all the structures out of a CREST conformer search.</p>
+<p>The function requires the <code class="docutils literal notranslate"><span class="pre">System</span></code> object which will be used as “template” for the output, and the .xyz file in which the structures are collected. It returns a list of <code class="docutils literal notranslate"><span class="pre">System</span></code> objects, corresponding to the individual structures.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mymol</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;all_conformers.xyz&quot;</span><span class="p">)</span>
+<span class="n">multi_xyz_list</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">split_multixyz</span><span class="p">(</span><span class="n">mol</span><span class="o">=</span><span class="n">mymol</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="s2">&quot;all_conformers.xyz&quot;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;conf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="maxdist">
+<h2><code class="docutils literal notranslate"><span class="pre">maxdist()</span></code><a class="headerlink" href="#maxdist" title="Permalink to this headline">#</a></h2>
+<p>Calculates the maximum distance (in Å) between any 2 atoms in the structure of the provided <code class="docutils literal notranslate"><span class="pre">System</span></code> object.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
