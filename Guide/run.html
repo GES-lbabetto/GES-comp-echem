@@ -561,7 +561,7 @@ title="Print to PDF"
 </tbody>
 </table>
 <hr class="docutils" />
-<p>The only mandatory parameter to be passed is the <code class="docutils literal notranslate"><span class="pre">System</span></code> on which to run the calculation. To run the calculation, simply call the function:</p>
+<p>The only mandatory parameter to be passed is the <code class="docutils literal notranslate"><span class="pre">System</span></code> on which to run the calculation. To run the calculation, simply call the function. The output of a calculation is a <code class="docutils literal notranslate"><span class="pre">System</span></code> object which can be assigned to a new variable:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">System</span>
 <span class="kn">from</span> <span class="nn">compechem.wrappers.xtb</span> <span class="kn">import</span> <span class="n">XtbInput</span>
 
@@ -621,7 +621,7 @@ title="Print to PDF"
 
 </pre></div>
 </div>
-<p>The output of a calculation can either be assigned to a new variable (as in the example above), or you can directly update the input <code class="docutils literal notranslate"><span class="pre">System</span></code> with the <code class="docutils literal notranslate"><span class="pre">inplace</span></code> flag:</p>
+<p>Alternatively, you can directly update the input <code class="docutils literal notranslate"><span class="pre">System</span></code> with the <code class="docutils literal notranslate"><span class="pre">inplace</span></code> flag:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">compechem.systems</span> <span class="kn">import</span> <span class="n">System</span>
 <span class="kn">from</span> <span class="nn">compechem.wrappers.xtb</span> <span class="kn">import</span> <span class="n">XtbInput</span>
 
@@ -702,10 +702,10 @@ title="Print to PDF"
 <tr class="row-odd"><td class="text-align:left"><p>Conformer search</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">conformer_search</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>Deprotonation</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Deprotomer search</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">deprotonate</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Protonation</p></td>
+<tr class="row-odd"><td class="text-align:left"><p>Protomer search</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">protonate</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>Quantum Cluster Growth</p></td>
