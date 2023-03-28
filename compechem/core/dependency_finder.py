@@ -182,6 +182,42 @@ def locate_crest(version: str = None) -> str:
     return path
 
 
+def locate_dftbplus(version: str = None) -> str:
+    """
+    Locates the path to the 'dftb+' executable from the system PATH. If specified, checks
+    that the correct version of dftb+ is loaded.
+
+    Arguments
+    ---------
+    version: str
+        The string defining the desired version of dftb+. If set to None (default) all
+        versions of dftb+ are accepted.
+
+    Returns
+    -------
+    str
+        The path to the dftb+ executable file.
+    """
+    path = locate_executable("dftb+")
+
+    # Check if the available version of dftb+ matches the requirements
+    dftbplus_version = None
+    dftbplus_output = subprocess.run(["dftb+", "--version"], capture_output=True, text=True).stdout
+    for line in dftbplus_output.split("\n"):
+
+        if "DFTB+ release" in line:
+            dftbplus_version: str = line.split()[3]
+            break
+
+    if dftbplus_version is None:
+        raise RuntimeError("Failed to read the version of the dftb+ software.")
+
+    elif version is not None and dftbplus_version != version:
+        raise RuntimeError(f"The required dftb+ version is not available. Version {dftbplus_version} found instead.")
+
+    return path
+
+
 def locate_dftbparamdir() -> str:
     """
     Locates the path to the DFTBPLUS_PARAM_DIR environment variable.
