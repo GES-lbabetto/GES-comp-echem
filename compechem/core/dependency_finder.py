@@ -1,6 +1,5 @@
 import subprocess
 
-from os.path import abspath
 from os import environ
 
 
@@ -24,13 +23,13 @@ def locate_executable(name: str) -> str:
     str
         The path to the requested program.
     """
-    output = subprocess.check_output(f"whereis {name}", shell=True).decode("utf-8")
-    output = output.strip("\n")
+    try:
+        output = subprocess.check_output(f"which {name}", shell=True).decode("utf-8")
+        output = output.strip("\n")
+        return output
 
-    if len(output.split(": ")) == 1:
+    except:
         raise RuntimeError(f"cannot find '{name}' in the system path")
-    else:
-        return str(abspath(output.split(": ")[-1]))
 
 
 def locate_vmd() -> str:
@@ -82,9 +81,7 @@ def locate_orca(version: str = None, get_folder: bool = False) -> str:
         raise RuntimeError("Failed to read the version of the orca software.")
 
     elif version is not None and orca_version != version:
-        raise RuntimeError(
-            f"The required orca version is not available. Version {orca_version} found instead."
-        )
+        raise RuntimeError(f"The required orca version is not available. Version {orca_version} found instead.")
 
     # Check if a MPI version is available in the system PATH
     _ = locate_executable("mpirun")
@@ -108,9 +105,7 @@ def locate_orca(version: str = None, get_folder: bool = False) -> str:
     key = ".".join(orca_version.split(".")[0:-1] + ["*"])
     if openmpi_version not in openmpi_required[key]:
         msg = " or ".join(openmpi_required[key])
-        raise RuntimeError(
-            f"orca {orca_version} retuires OpenMPI {msg}. OpenMPI {openmpi_version} found instead."
-        )
+        raise RuntimeError(f"orca {orca_version} retuires OpenMPI {msg}. OpenMPI {openmpi_version} found instead.")
 
     return path.rstrip("/orca") if get_folder is True else path
 
@@ -146,9 +141,7 @@ def locate_xtb(version: str = None) -> str:
         raise RuntimeError("Failed to read the version of the xtb software.")
 
     elif version is not None and xtb_version != version:
-        raise RuntimeError(
-            f"The required xtb version is not available. Version {xtb_version} found instead."
-        )
+        raise RuntimeError(f"The required xtb version is not available. Version {xtb_version} found instead.")
 
     return path
 
@@ -184,49 +177,7 @@ def locate_crest(version: str = None) -> str:
         raise RuntimeError("Failed to read the version of the crest software.")
 
     elif version is not None and crest_version != version:
-        raise RuntimeError(
-            f"The required crest version is not available. Version {crest_version} found instead."
-        )
-
-    return path
-
-
-def locate_dftbplus(version: str = None) -> str:
-    """
-    Locates the path to the 'dftb+' executable from the system PATH. If specified, checks
-    that the correct version of dftb+ is loaded.
-
-    Arguments
-    ---------
-    version: str
-        The string defining the desired version of dftb+. If set to None (default) all
-        versions of dftb+ are accepted.
-
-    Returns
-    -------
-    str
-        The path to the dftb+ executable file.
-    """
-    path = locate_executable("dftb+")
-
-    # Check if the available version of dftb+ matches the requirements
-    dftbplus_version = None
-    dftbplus_output = subprocess.run(
-        ["dftb+", "--version"], capture_output=True, text=True
-    ).stdout
-    for line in dftbplus_output.split("\n"):
-
-        if "DFTB+ release" in line:
-            dftbplus_version: str = line.split()[3]
-            break
-
-    if dftbplus_version is None:
-        raise RuntimeError("Failed to read the version of the dftb+ software.")
-
-    elif version is not None and dftbplus_version != version:
-        raise RuntimeError(
-            f"The required dftb+ version is not available. Version {dftbplus_version} found instead."
-        )
+        raise RuntimeError(f"The required crest version is not available. Version {crest_version} found instead.")
 
     return path
 
@@ -247,3 +198,47 @@ def locate_dftbparamdir() -> str:
         raise RuntimeError("Failed to locate DFTBPLUS_PARAM_DIR environment variable.")
 
     return path
+
+
+def locate_namd2(version: str = None) -> str:
+    """
+    Locates the path to the 'namd2' executable from the system PATH. If the executable is
+    located checks if the NAMD version is CUDA-compatible. If specified, checks that the
+    correct version of orca is loaded.
+
+    Arguments
+    ---------
+    version: str
+        The string defining the desired version of NAMD. If set to None (default) all
+        versions of orca are accepted.
+
+    Returns
+    -------
+    str
+        The path to the NAMD executable file.
+    bool
+        True if NAMD is CUDA-compatible, else False
+    """
+    path = locate_executable("namd2")
+
+    # Check if the available version of NAMD matches the requirements
+    namd_version = None
+    output = subprocess.run(["namd2"], capture_output=True, text=True).stdout
+
+    cuda_version = False
+    for line in output.split("\n"):
+
+        if "CUDA" in line:
+            cuda_version = True
+
+        if "NAMD" in line:
+            namd_version: str = line.split()[2]
+            break
+
+    if namd_version is None:
+        raise RuntimeError("Failed to read the version of the NAMD software.")
+
+    elif version is not None and namd_version != version:
+        raise RuntimeError(f"The required NAMD version is not available. Version {namd_version} found instead.")
+
+    return path, cuda_version

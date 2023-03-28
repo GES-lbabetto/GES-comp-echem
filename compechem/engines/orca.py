@@ -2,7 +2,6 @@ import os, copy, shutil, sh, logging
 import numpy as np
 from typing import Dict
 from tempfile import mkdtemp
-from enum import Enum
 
 import compechem.config as cfg
 from compechem.config import get_ncores
@@ -14,7 +13,7 @@ from compechem.core.spectroscopy import VibrationalData
 from compechem.tools.internaltools import clean_suffix
 
 
-logger = logging.getLogger(__name__) 
+logger = logging.getLogger(__name__)
 
 
 class OrcaInput(Engine):
@@ -229,9 +228,7 @@ class OrcaInput(Engine):
             else:
                 self.parse_output(mol)
 
-            process_output(
-                mol, self.__output_suffix, "spe", mol.charge, mol.spin, save_cubes=save_cubes
-            )
+            process_output(mol, self.__output_suffix, "spe", mol.charge, mol.spin, save_cubes=save_cubes)
 
             if remove_tdir:
                 shutil.rmtree(tdir)
@@ -249,7 +246,7 @@ class OrcaInput(Engine):
         hirshfeld: bool = False,
         inplace: bool = False,
         remove_tdir: bool = True,
-        optimization_level: str = "NORMALOPT"
+        optimization_level: str = "NORMALOPT",
     ):
         """Geometry optimization + frequency analysis.
 
@@ -310,7 +307,7 @@ class OrcaInput(Engine):
                     "save_cubes": save_cubes,
                     "cube_dim": cube_dim,
                     "hirshfeld": hirshfeld,
-                    "optimization_level": optimization_level
+                    "optimization_level": optimization_level,
                 },
             )
 
@@ -329,9 +326,7 @@ class OrcaInput(Engine):
                 mol.geometry.level_of_theory_geometry = self.level_of_theory
                 self.parse_output(mol)
 
-            process_output(
-                mol, self.__output_suffix, "opt", mol.charge, mol.spin, save_cubes=save_cubes
-            )
+            process_output(mol, self.__output_suffix, "opt", mol.charge, mol.spin, save_cubes=save_cubes)
 
             if remove_tdir:
                 shutil.rmtree(tdir)
