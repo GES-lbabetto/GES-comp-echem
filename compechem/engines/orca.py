@@ -1736,7 +1736,7 @@ class OrcaInput(Engine):
         """
 
         if not os.path.isfile(output_file):
-            raise RuntimeError("Cannot parse output, the `output.out` file does not exist.")
+            raise RuntimeError(f"Cannot parse output, the {output_file} file does not exist.")
 
         normal_termination = False
         with open(output_file, "r") as outfile:
